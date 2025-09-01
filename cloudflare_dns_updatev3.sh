@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# This script updates the Cloudflare's A DNS records for your domain.
+# It requires the DNS edit token key and the DNS Zone ID.
+# The script uses curl for the API calls and awk parse the responses.
+# Be sure to create the subdomain A DNS record in the Cloudflare portal with a dummy routable IP address first.
+
 SUBDOMAIN=<example.tld>
 KEY=<Cloudflare Token Key for the DNS zone>
 ZONE_ID=<Cloudflare DNS zone ID>
