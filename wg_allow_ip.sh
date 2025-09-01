@@ -1,4 +1,9 @@
 #!/bin/vbash
+
+# This script updates a firewall rule to allow connection from an IP address associated with a FQDN on an Ubiqiti Edge Router.
+# This is benficial when you want to allow a single dynamic IP to be allowed through the firewall.
+# Create a cron job to run this script every X minutes.
+
 runcfg="/opt/vyatta/sbin/vyatta-cfg-cmd-wrapper"
 DOMAIN=<example.tld>
 FIREWALL_GP=<wg_allow_ip>
