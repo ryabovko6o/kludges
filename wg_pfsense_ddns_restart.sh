@@ -1,7 +1,13 @@
 #!/bin/sh
 
-# Adopted from here
+# Inspired by and adopted from here
 # https://github.com/Gobidev/wireguard-keepalive
+# When using a FQDN to connect to a wireguard peer and the peer's IP address changes after the connection,
+# the wireguard client does not requery a DNS server for the new IP address and still tries to connect to the old one.
+# This is a problem I encountered when setting up a site-to-site VPN tunnel over wireguard using pfSense.
+# This script tracks the IP address of the remote peer through DNS query and restarts the wireguard tunnel if the IP
+# addresses DON'T match.
+# Install the cron package to your pfSense and create a cron job to run the script every X minutes.
 
 # Function to validate IP address
 validate_ip() {
